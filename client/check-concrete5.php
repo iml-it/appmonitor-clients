@@ -27,7 +27,7 @@ $oMonitor->setWebsite('My Concrete5 Instance');
 require_once 'check-concrete5.settings.php';
 
 // ----------------------------------------------------------------------
-// Read Matomo specific config items
+// Read Concrete5 specific config items
 // ----------------------------------------------------------------------
 
 

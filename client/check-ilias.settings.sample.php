@@ -1,11 +1,11 @@
 <?php
 // ----------------------------------------------------------------------
 // 
-//      CONCRETE5 CONFIG :: SAMPLE
+//      ILIAS CONFIG :: SAMPLE
 // 
 // ----------------------------------------------------------------------
-// copy sample file to check-concrete5.settings.php and correct approot
-// The checking script needs to find ./application/config/database.php
+// copy sample file to check-ilias.settings.php and correct approot
+// The checking script needs to find ./ilias.ini.php
 // ----------------------------------------------------------------------
 
 $sApproot = $_SERVER['DOCUMENT_ROOT'];

@@ -1,5 +1,8 @@
 
 HISTORY
 
-v0.1  2018-07-16
+v0.02  2018-07-16
+  - add ILIAS check
+
+v0.01  2018-07-16
   - first commit with 2 checks from Axel (https://www.axel-hahn.de/)
