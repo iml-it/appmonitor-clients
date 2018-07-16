@@ -1,0 +1,10 @@
+nbproject
+/server/config/appmonitor-server-config.json
+/server/tmp/ahcache/
+/client/index-tester.php
+/server/themes/**/*.min.css
+/functions/*.min.js
+/client/general_include.php
+/client/check-concrete5.settings.php
+/client/check-matomo.settings.php
+/server/javascript/functions.min.js

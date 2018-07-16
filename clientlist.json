@@ -1,0 +1,16 @@
+{
+    "clients": {
+        "concrete5": {
+            "description": "CMS Concrete 5",
+            "author": "Axel Hahn",
+            "lastchange": "2018-07-16",
+            "appurl": "https://www.concrete5.org/"
+        },
+        "matomo": {
+            "description": "Open Analytics platform - Matomo",
+            "author": "Axel Hahn",
+            "lastchange": "2018-07-16",
+            "appurl": "https://matomo.org/"
+        }
+    }
+}
