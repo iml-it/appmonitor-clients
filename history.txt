@@ -1,6 +1,9 @@
 
 HISTORY
 
+v0.03  2018-07-16
+  - add port in mysql check of ILIAS (after appmonitor client update to 0.42)
+
 v0.02  2018-07-16
   - add ILIAS check
 

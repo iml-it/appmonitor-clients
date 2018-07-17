@@ -16,7 +16,8 @@
  * 
  * @author: Axel Hahn
  * ----------------------------------------------------------------------
- * 2018-07-16  v0.1
+ * 2018-07-16  v0.02
+ * 2018-07-17  v0.03  add port in mysql check
  */
 
 // ----------------------------------------------------------------------
@@ -63,7 +64,8 @@ $aDb=array(
   'username' => $aClientConfig['db']['user'],
   'password' => $aClientConfig['db']['pass'],
   'database' => $aClientConfig['db']['name'],
-);
+  'port'     => $aClientConfig['db']['port'],
+); 
 
 // ----------------------------------------------------------------------
 // checks
@@ -137,6 +139,7 @@ $oMonitor->addCheck(
                 "user"     => $aDb['username'],
                 "password" => $aDb['password'],
                 "db"       => $aDb['database'],
+                "port"     => $aDb['port'],
             ),
         ),
     )
