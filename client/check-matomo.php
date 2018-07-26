@@ -21,7 +21,7 @@
 // ----------------------------------------------------------------------
 require_once('classes/appmonitor-client.class.php');
 $oMonitor = new appmonitor();
-$oMonitor->setWebsite('My Matomo Instance');
+$oMonitor->setWebsite('Matomo Instance');
 
 @include 'general_include.php';
 require_once 'check-matomo.settings.php';

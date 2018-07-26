@@ -21,7 +21,7 @@
 // ----------------------------------------------------------------------
 require_once('classes/appmonitor-client.class.php');
 $oMonitor = new appmonitor();
-$oMonitor->setWebsite('My Concrete5 Instance');
+$oMonitor->setWebsite('Concrete5 Instance');
 
 @include 'general_include.php';
 require_once 'check-concrete5.settings.php';

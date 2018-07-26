@@ -25,7 +25,7 @@
 // ----------------------------------------------------------------------
 require_once('classes/appmonitor-client.class.php');
 $oMonitor = new appmonitor();
-$oMonitor->setWebsite('My ILIAS Instance');
+$oMonitor->setWebsite('ILIAS Instance');
 
 @include 'general_include.php';
 require_once 'check-ilias.settings.php';
