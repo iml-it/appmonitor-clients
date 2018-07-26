@@ -1,6 +1,9 @@
 
 HISTORY
 
+v0.04  2018-07-26
+  - add ssl check in all client checks if https is used in the request
+
 v0.03  2018-07-16
   - add port in mysql check of ILIAS (after appmonitor client update to 0.42)
 
