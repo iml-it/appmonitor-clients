@@ -8,4 +8,5 @@
 // The checking script needs to find ./config/config.ini.php
 // ----------------------------------------------------------------------
 
-$sApproot = $_SERVER['DOCUMENT_ROOT'].'/piwik';
+// $sApproot = $_SERVER['DOCUMENT_ROOT'].'/piwik';
+$sApproot = $_SERVER['DOCUMENT_ROOT'];
