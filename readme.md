@@ -9,6 +9,8 @@ This repository with client checks extends the appmonitor repository. It contain
 The client checks exist for
 
 * Concrete 5 (Cms)
+* Ilias (LMS)
+* Limesurvey (Online survey)
 * Matomo (Analytics)
 
 
