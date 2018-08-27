@@ -1,6 +1,9 @@
 
 HISTORY
 
+v0.05  2018-08-27
+  - add limesurvey client (requires appmonitor client version 0.52)
+
 v0.04  2018-07-26
   - add ssl check in all client checks if https is used in the request
 
