@@ -10,10 +10,11 @@
  * It checks
  * - the write access to the config file and upload
  * - connect to database (which is read from config)
+ * - ssl certificate (on https request only)
  *
  * @author: Axel Hahn
  * ----------------------------------------------------------------------
- * 2018-08-27  v0.1
+ * 2018-08-27  v1.0
  */
 
 // ----------------------------------------------------------------------

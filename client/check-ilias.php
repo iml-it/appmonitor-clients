@@ -13,6 +13,7 @@
  * - datatadir must be writable
  * - datatadir/[Default-client] must be writable
  * - mysql connect of default client
+ * - ssl certificate (on https request only)
  * 
  * @author: Axel Hahn
  * ----------------------------------------------------------------------

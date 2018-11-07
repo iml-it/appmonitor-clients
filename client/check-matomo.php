@@ -10,10 +10,11 @@
  * It checks 
  * - the write access to the config file
  * - connect to matomo database (which is read from config)
+ * - ssl certificate (on https request only)
  * 
  * @author: Axel Hahn - https://www.axel-hahn.de/
  * ----------------------------------------------------------------------
- * 2018-06-30  v0.1
+ * 2018-06-30  v1.0
  */
 
 // ----------------------------------------------------------------------
