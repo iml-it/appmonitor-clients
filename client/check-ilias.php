@@ -19,16 +19,21 @@
  * ----------------------------------------------------------------------
  * 2018-07-16  v0.02
  * 2018-07-17  v0.03  add port in mysql check
+ * 2019-05-24  v1.00  detect include or standalone mode
  */
 
 // ----------------------------------------------------------------------
 // CONFIG
 // ----------------------------------------------------------------------
-require_once('classes/appmonitor-client.class.php');
-$oMonitor = new appmonitor();
-$oMonitor->setWebsite('ILIAS Instance');
 
-@include 'general_include.php';
+$bStandalone=!(class_exists('appmonitor') && isset($oMonitor));
+if($bStandalone){
+	require_once('classes/appmonitor-client.class.php');
+	$oMonitor = new appmonitor();
+	$oMonitor->setWebsite('ILIAS Instance');
+	@include 'general_include.php';
+}
+
 require_once 'check-ilias.settings.php';
 
 // ----------------------------------------------------------------------
@@ -160,7 +165,9 @@ if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']){
 
 // ----------------------------------------------------------------------
 
-$oMonitor->setResult();
-$oMonitor->render();
+if($bStandalone){
+	$oMonitor->setResult();
+	$oMonitor->render();
+}
 
 // ----------------------------------------------------------------------

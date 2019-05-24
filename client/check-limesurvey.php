@@ -15,16 +15,22 @@
  * @author: Axel Hahn
  * ----------------------------------------------------------------------
  * 2018-08-27  v1.0
+ * 2019-05-24  v0.04  detect include or standalone mode
  */
 
 // ----------------------------------------------------------------------
 // CONFIG
 // ----------------------------------------------------------------------
-require_once('classes/appmonitor-client.class.php');
-$oMonitor = new appmonitor();
-$oMonitor->setWebsite('Limesurvey Instance');
 
-@include 'general_include.php';
+$bStandalone=!(class_exists('appmonitor') && isset($oMonitor));
+if($bStandalone){
+    require_once('classes/appmonitor-client.class.php');
+    $oMonitor = new appmonitor();
+    $oMonitor->setWebsite('Limesurvey Instance');
+
+    @include 'general_include.php';
+}
+
 require_once 'check-limesurvey.settings.php';
 
 // ----------------------------------------------------------------------
@@ -107,7 +113,9 @@ if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']){
 }
 // ----------------------------------------------------------------------
 
-$oMonitor->setResult();
-$oMonitor->render();
+if($bStandalone){
+	$oMonitor->setResult();
+	$oMonitor->render();
+}
 
 // ----------------------------------------------------------------------

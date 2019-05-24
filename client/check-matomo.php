@@ -15,16 +15,22 @@
  * @author: Axel Hahn - https://www.axel-hahn.de/
  * ----------------------------------------------------------------------
  * 2018-06-30  v1.0
+ * 2019-05-24  v0.04  detect include or standalone mode
  */
 
 // ----------------------------------------------------------------------
 // CONFIG
 // ----------------------------------------------------------------------
-require_once('classes/appmonitor-client.class.php');
-$oMonitor = new appmonitor();
-$oMonitor->setWebsite('Matomo Instance');
 
-@include 'general_include.php';
+$bStandalone=!(class_exists('appmonitor') && isset($oMonitor));
+if($bStandalone){
+    require_once('classes/appmonitor-client.class.php');
+    $oMonitor = new appmonitor();
+    $oMonitor->setWebsite('Matomo Instance');
+
+    @include 'general_include.php';
+}
+
 require_once 'check-matomo.settings.php';
 
 // ----------------------------------------------------------------------
@@ -87,7 +93,9 @@ if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']){
 }
 // ----------------------------------------------------------------------
 
-$oMonitor->setResult();
-$oMonitor->render();
+if($bStandalone){
+	$oMonitor->setResult();
+	$oMonitor->render();
+}
 
 // ----------------------------------------------------------------------

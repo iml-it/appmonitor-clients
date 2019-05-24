@@ -16,17 +16,23 @@
  * 
  * @author: Axel Hahn
  * ----------------------------------------------------------------------
- * 2018-11-07  v0.1
+ * 2018-11-07  v0.01
+ * 2019-05-24  v0.02  detect include or standalone mode
  */
 
 // ----------------------------------------------------------------------
 // CONFIG
 // ----------------------------------------------------------------------
-require_once('classes/appmonitor-client.class.php');
-$oMonitor = new appmonitor();
-$oMonitor->setWebsite('Wordpress Instance');
 
-@include 'general_include.php';
+$bStandalone=!(class_exists('appmonitor') && isset($oMonitor));
+if($bStandalone){
+    require_once('classes/appmonitor-client.class.php');
+    $oMonitor = new appmonitor();
+    $oMonitor->setWebsite('Wordpress Instance');
+
+    @include 'general_include.php';
+}
+
 require_once 'check-wordpress.settings.php';
 
 // ----------------------------------------------------------------------
@@ -40,7 +46,7 @@ if (!file_exists($sConfigfile)) {
     die('ERROR: Config file was not found. Set a correct $sApproot pointing to wordpress install dir.');
 }
 
-require($sConfigfile)
+require($sConfigfile);
 $aDb=array(
   'server'   => DB_HOST,
   'username' => DB_USER,
@@ -108,7 +114,9 @@ if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']){
 }
 // ----------------------------------------------------------------------
 
-$oMonitor->setResult();
-$oMonitor->render();
+if($bStandalone){
+	$oMonitor->setResult();
+	$oMonitor->render();
+}
 
 // ----------------------------------------------------------------------
